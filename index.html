@@ -1,0 +1,21 @@
+<html>
+<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+
+<body>
+
+    <main class="container">
+    </main>
+ 
+    <py-script> 
+    from pyodide.http import pyfetch
+    import asyncio
+    
+    response = await pyfetch(url="https://catfact.ninja/fact", method="GET")
+    test = await response.json()
+    urltest=test['fact']
+    print(urltest)
+    </py-script>
+  </body> 
+</html>
